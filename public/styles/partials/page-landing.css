@@ -1,0 +1,132 @@
+/*Primeira página do site*/
+/*:root{*/
+    /*font-size: 40%; /*modificar as medidas rem*/
+/*}*/
+#page-landing{
+    background: var(--color-primary);
+
+}
+#page-landing #container{
+    color: var(--color-text-in-primary);
+}
+.logo-container img{
+    height: 10rem;
+}
+.logo-container{
+    text-align: center; /*alinha o texto no centro*/
+    margin-bottom: 3.2rem; /*margem abaixo*/
+}
+.logo-container h2{
+    font-weight: 500; /*peso da fonte*/
+    font-size: 3.6rem; /*tamanho da fonte*/
+    line-height: 4.6rem;/*tamanho da linha do texto*/
+    margin-top: 0.8rem; /*margem acima*/
+}
+.hero-image{
+    width: 100%; /*100% do pai dele*/
+}
+.buttons-container{
+    display: flex; /* deixa os elementos flexíveis*/
+    justify-content: center; /*justify-content so funciona em conjunto com o display: flex*/
+    margin: 3.2rem 0;
+}
+.buttons-container a{
+    width: 30rem;
+    height: 10.4rem;
+
+    /*background-color: red;*/
+    border-radius: 0.8rem;/*arrendonda as bordas*/
+    margin-right: 1.6rem;/* espaçamento entre os buttons*/
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;/*tirar a linha debaixo do link*/
+
+    transition: background 0.2s; /*transição ou animação para todos os elementos a*/
+
+    color: var(--color-button-text);
+}
+.buttons-container a img{
+    /*procura todas as imagens la dentro e modifica*/
+    width: 4rem;
+    margin-right: 2.4rem; /*Da um espaçamento nas imagens do button*/
+
+}
+.buttons-container a.study{
+    /*modicando a tag "a" que recebe a classe "study"*/
+    background: var(--color-primary-lighter); 
+}
+.buttons-container a.study:hover{
+    /*Quando o mouse passar por cima do button*/
+    background: var(--color-primary-light);
+}
+.buttons-container a.give-classes{
+    /*modicando a tag "a" que recebe a classe "give-classes"*/
+    background: var(--color-secondary);
+    margin-right: 0rem;
+}
+.buttons-container a.give-classes:hover{
+    /*Quando o mouse passar por cima do button*/
+    background: var(--color-secondary-dark);
+}
+.total-connections{
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total-connections img{
+    margin-left: 0.8rem;
+}
+/*versão pra tablet*/
+@media(max-width: 699px){
+    :root{
+        font-size: 40%;
+    }
+}
+
+/*transfomando para desktop*/
+
+@media(min-width: 1100px){
+    #page-landing #container{
+        max-width: 1100px;
+        display: grid; /*vamos transformar usando grids*/
+        grid-template-columns: 2fr 1fr 2fr; /*tamanho das colunas*/
+        grid-template-rows: 350px 1fr; /*tamanho das linhas*/
+        grid-template-areas:
+         "proffy image image"
+         "button button texting";
+         /*gap: 60px; /*espaçamento na grid*/
+         column-gap: 87px;
+         row-gap: 86px;
+    }
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial; /*vai mandar a logo e o texto para o inicio*/
+        align-self: center; /*vai alinhar dentro da grid*/
+        margin: 0;
+    }
+    .logo-container img{
+        height: 127px;/*a logo vai ocupar 100% da grid*/
+    }
+    .hero-image{
+        grid-area: image;
+        height: 350px;
+    }
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;/*vai sobrescrever o justify-content da versão mobile, e alinhar ao início*/
+        margin: 0;
+    }
+    .total-connections{
+        grid-area: texting;
+        justify-self: end; /*vai jogar para o final*/
+        font-size: 1.2rem;
+    }
+}
+

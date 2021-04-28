@@ -1,0 +1,80 @@
+.page-header{
+    background-color: var(--color-primary);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header .top-bar-container{
+    width: 90%;
+    margin: 0 auto;/*seta o espaço entre o voltar e a logo em 0 de forma automatica*/
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*espaço entre a seta voltar e logo proffy*/
+
+    padding: 1.6rem 0;/*espaçamento de 1.6rem em cima e em baixo e nos lados deixar zero*/
+}
+
+.page-header .top-bar-container a{
+    height: 3.2rem;
+    transition: opacity 0.2s;/*quando fizer alguma ação no botão voltar que mexa na opacidade ele vai fazer isso em uma transição*/
+}
+.page-header .top-bar-container a:hover{
+    opacity: 0.6;
+}
+
+.page-header .top-bar-container > img{
+    height: 1.6rem;
+}
+
+
+.page-header .header-content{
+    width: 90%;
+    margin: 3.2rem auto;
+
+    position:relative;/* tem a ver com a versão desktop, deixa*/
+}
+
+.page-header .header-content strong{
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem; /*espaço altura do texto*/
+    color: var(--color-title-in-primary);
+}
+
+.page-header .header-content p{
+    max-width: 30rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--color-text-in-primary);
+    margin-top: 2.4rem;
+}
+
+@media (min-width: 700px){
+    /*acima de 700px o media vai adicionar...*/
+
+    .page-header{ /* essa parte do desktop e opcional*/
+        height: 340px;
+    }
+
+    .page-header .top-bar-container{ /* essa parte do desktop e opcional*/
+        max-width: 1100px;
+    }
+
+    .page-header .header-content{ /* essa parte do desktop e opcional*/
+        max-width: 740px;
+
+        margin:0 auto;
+
+        flex: 1 1;
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;     
+    }
+
+    .page-header .header-content strong{/* essa parte do desktop e opcional*/
+        max-width: 350px;
+    }
+
+}
